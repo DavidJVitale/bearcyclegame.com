@@ -13,7 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -45,12 +45,17 @@
       player = new YT.Player('trailer-iframe-id', {
         events: {
           'onReady': onPlayerReady,
+        },
+        playerVars:{
+          controls: 0,
+          modestBranding: 1,
+          origin: "https://bearcyclegame.com"
         }
       });
     }
     function onPlayerReady(event) {
       event.target.setVolume(100);
-      event.target.playVideo();
+      //event.target.playVideo();
     } 
     </script>
   </head>
@@ -59,19 +64,40 @@
 <main>
   <div id="top-section-id" class="px-4 py-5 my-5 text-center">
     <div class="col-lg-6 mx-auto">
-      <h1 class="display-5 fw-bold">Centered hero</h1>
+      <h1 class="visually-hidden">bearcycle</h1>
+      <h1 class="display-5 fw-bold"><img src="/assets/brand/logo-333x100.png"></h1>
       <p class="lead mb-4">
         <div class="videoWrapper">
           <iframe id="trailer-iframe-id" width="100%" height="auto" src="https://www.youtube.com/embed/VO1p_sDvn5Q?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Wishlist now!</button>
+      <br>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-lg btn-info"> <img src="../assets/brand/steam.svg" alt="" width="50" height="50"> Wishlist now!</button>
       </div>
     </div>
   </div>
 
   <div class="b-example-divider"></div>
+
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Play the FREE demo now!</h1>
+        <p class="col-lg-10 fs-4">Subscribe to the newsletter to play the <b>FREE</b> demo! Unsubscribe whenever. But you'll miss out on the sneak peaks, freebies, and more!</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Subscribe</button>
+          <hr class="my-4">
+        </form>
+      </div>
+    </div>
+  </div>
 
   <div class="px-4 pt-5 my-5 text-center border-bottom">
     <h1 class="display-4 fw-bold">Centered screenshot</h1>
@@ -109,34 +135,6 @@
 
   <div class="b-example-divider"></div>
 
-  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
-        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-          <hr class="my-4">
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <div class="b-example-divider"></div>
 
