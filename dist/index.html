@@ -36,8 +36,8 @@
     <link href="/assets/index.css" rel="stylesheet">
 
 
-    <!--custom youtube autoplay stuff-->
-    <div id="autoplayYouTubeVideo"></div>
+    <!--custom youtube stuff-->
+    <div id="youtubeAPISection"></div>
 
     <script async src="https://www.youtube.com/iframe_api"></script>
     <script>
@@ -80,27 +80,30 @@
 
   <div class="b-example-divider"></div>
 
-  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Play the FREE demo now!</h1>
-        <p class="col-lg-10 fs-4">Subscribe to the newsletter to play the <b>FREE</b> demo! Unsubscribe whenever. But you'll miss out on the sneak peaks, freebies, and more!</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-          </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Subscribe</button>
-          <hr class="my-4">
-        </form>
-      </div>
+
+  <div class="px-4 pt-5 my-5 text-center">
+    <h1 class="display-4 fw-bold">Play the FREE demo now!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Subscribe to the newsletter or join the Discord to play the <b>FREE</b> demo! Also included are sneak peaks, freebies, and more!</p>
+    </div>
+    <div class="overflow-hidden">
+        <iframe id="subscribeIframe" src="/_emailsubscribe.html" frameborder="0" allowfullscreen style="width:100%; border: none;"></iframe>
+    </div>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"><b>or<br><br></b></p>
+    </div>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <a href="https://discord.gg/9PDnSt9wQ5" target="_blank">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3"> <img src="../assets/brand/discord.svg" alt="" width="50" height="50"> Join the Discord!</button>
+      </a>
     </div>
   </div>
+ 
+  <div class="b-example-divider"></div>
 
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
-    <h1 class="display-4 fw-bold">Centered screenshot</h1>
+  <div class="px-4 pt-5 my-5 text-center">
+    <h1 class="display-4 fw-bold">About</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
@@ -110,7 +113,7 @@
     </div>
     <div class="overflow-hidden" style="max-height: 30vh;">
       <div class="container px-5">
-        <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        <img src="bootstrap-docs.png" class="img-fluid rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
       </div>
     </div>
   </div>
@@ -171,10 +174,22 @@
 
   <div class="b-example-divider mb-0"></div>
 </main>
-
-
     <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+	      let iframe = document.querySelector("#subscribeIframe");
 
+        
+	      iframe.addEventListener('load', function() {
+		      iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
+	      });
+
+        window.onmessage = (e) => {
+          if (e.data.hasOwnProperty("frameHeight")) {
+            console.log("Received new height of ", e.data.frameHeight);
+            document.getElementById("subscribeIframe").style.height = `${e.data.frameHeight + 30}px`;
+          }
+};
+</script>  
       
   </body>
 </html>
