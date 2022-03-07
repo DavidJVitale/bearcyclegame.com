@@ -29,3 +29,9 @@
 #top-section-id {
   padding-top: 0rem !important;
 }
+
+.crossfadeimg{
+	transition: opacity 1s;
+}
+
+ 
