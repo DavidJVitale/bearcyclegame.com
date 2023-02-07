@@ -69,18 +69,12 @@
       <h1 class="display-5 fw-bold"><img src="/assets/brand/logo-333x100.png"></h1>
       <p class="lead mb-4">
         <div class="videoWrapper">
-          <iframe id="trailer-iframe-id" src="https://www.youtube.com/embed/1oun9XnT_QI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+          <iframe id="trailer-iframe-id" src="https://www.youtube.com/watch?v=g6RqeG-t_IM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
       </p>
       <br>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <a href="https://store.steampowered.com/app/1932590/bearcycle/" target="_blank"><button type="button" class="btn btn-lg btn-info"> <img src="../assets/brand/steam.svg" alt="" width="50" height="50"> Wishlist now!</button></a>
-      </a>
-    </div>
-
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      <a href="https://alvariusgames.itch.io/bearcycle-alpha" target="_blank">
-        <button type="button"  class="btn btn-lg btn-info"> <img src="../assets/brand/itch.svg" alt="" width="50" height="50"> Play the FREE demo!</button>
+        <a href="https://store.steampowered.com/app/1932590/bearcycle/" target="_blank"><button type="button" class="btn btn-lg btn-info"> <img src="../assets/brand/steam.svg" alt="" width="50" height="50"> Wishlist & Play the Demo</button></a>
       </a>
     </div>
   </div>
@@ -92,7 +86,7 @@
   <div class="px-4 pt-5 my-5 text-center">
     <h1 class="display-4 fw-bold">About</h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">bearcycle combines fast-paced motorcycle racing with wacky platforming madness. Grind, grapple, and rocket your way through the forest, local city, and beyond! So grab some berries, catch some air, and land a trick in this unBEARably fun classic.</p>
+      <p class="lead mb-4">bearcycle® combines fast-paced motorcycle racing with wacky platforming madness. Grind, grapple, and rocket your way through the story mode—or create your own custom levels & share them online!</p>
     </div>
   </div>
   <div class="container-fluid position-relative text-center">
@@ -101,13 +95,16 @@
       <img id="crossfade1" src="/assets/screenshots/gameplay2.png" class="img-fluid rounded-3 mb-4 card-img-overlay crossfadeimg mx-auto" width="700" height="500" style="opacity: 0;">
       <img id="crossfade2" src="/assets/screenshots/gameplay3.png" class="img-fluid rounded-3 mb-4 card-img-overlay crossfadeimg mx-auto" width="700" height="500" style="opacity: 0;">
       <img id="crossfade3" src="/assets/screenshots/gameplay4.png" class="img-fluid rounded-3 mb-4 card-img-overlay crossfadeimg mx-auto" width="700" height="500" style="opacity: 0;">
+      <img id="crossfade4" src="/assets/screenshots/gameplay5.png" class="img-fluid rounded-3 mb-4 card-img-overlay crossfadeimg mx-auto" width="700" height="500" style="opacity: 0;">
+      <img id="crossfade5" src="/assets/screenshots/gameplay6.png" class="img-fluid rounded-3 mb-4 card-img-overlay crossfadeimg mx-auto" width="700" height="500" style="opacity: 0;">
+
   </div>
   <script>
     var i=0;
     setInterval(() => {
       i++;
-      i = i % 4;
-      for(var j=0;j<4;j++){
+      i = i % 6;
+      for(var j=0;j<6;j++){
         var opacity = 0;
         if(i===j){
           opacity = 1;
